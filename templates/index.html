@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Spam Classifier</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<main class="container">
+
+    <h1>SMS Spam Classifier</h1>
+
+    <p class="sub">
+        Paste a text message below to find out whether it looks like spam.
+    </p>
+
+    <label for="message">Message</label>
+
+    <textarea
+        id="message"
+        maxlength="1000"
+        placeholder="e.g. Congratulations! You've won a free prize. Reply WIN to claim now."
+    ></textarea>
+
+    <div class="meta">
+        <span>Press Ctrl + Enter to check</span>
+        <span id="count">0 / 1000</span>
+    </div>
+
+    <button id="predictBtn" type="button">
+        <span class="spinner" aria-hidden="true"></span>
+        <span id="btnText">Check message</span>
+    </button>
+
+    <section id="result" aria-live="polite" hidden></section>
+
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

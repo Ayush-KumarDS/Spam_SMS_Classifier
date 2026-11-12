@@ -1,0 +1,149 @@
+:root {
+    --ink: #14213d;
+    --muted: #5d6b86;
+    --bg: #e9eef8;
+    --card: #ffffff;
+    --line: #d5ddec;
+    --accent: #3454d1;
+    --accent-dark: #2742ab;
+    --spam: #d9481f;
+    --spam-bg: #fdeee8;
+    --ham: #187a50;
+    --ham-bg: #e6f6ee;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 16px;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 560px;
+    background: var(--card);
+    border-radius: 20px;
+    padding: 36px 32px;
+    box-shadow: 0 16px 40px rgba(20, 33, 61, 0.10);
+}
+
+h1 {
+    margin: 0 0 6px;
+    font-size: 1.85rem;
+    font-weight: 800;
+}
+
+.sub {
+    margin-bottom: 24px;
+    color: var(--muted);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    resize: vertical;
+    background: #f7f9fd;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+textarea:focus {
+    outline: none;
+    background: white;
+    border-color: var(--accent);
+}
+
+.meta {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 18px;
+    color: var(--muted);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: var(--accent);
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--accent-dark);
+}
+
+.spinner {
+    display: none;
+}
+
+button.loading .spinner {
+    display: inline-block;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+.result-card {
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.result-card.spam {
+    background: var(--spam-bg);
+    border: 2px solid var(--spam);
+}
+
+.result-card.ham {
+    background: var(--ham-bg);
+    border: 2px solid var(--ham);
+}
+
+.result-card.error {
+    background: #fff6e0;
+    border: 2px solid #c98a00;
+}
+
+.badge {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.spam .badge {
+    color: var(--spam);
+}
+
+.ham .badge {
+    color: var(--ham);
+}
+
+.error .badge {
+    color: #c98a00;
+}
